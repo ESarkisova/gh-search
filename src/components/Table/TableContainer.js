@@ -19,20 +19,21 @@ function TableContainer() {
 
     const {showAlert} = useContext(AlertContext);
 
-    useEffect(async () => {
+    const getRepo = async (pageNum = 1) => {
 
         setIsLoading(true);
         try {
             const result = await API.getRepo(debouncedSearchQuery, selectLicenseType, pageNum);
             setDataFromGithub(result);
+            setPageNum(pageNum);
         } catch (err) {
             showAlert(err, ERROR_TYPE)
         } finally {
             setIsLoading(false);
         }
+    }
 
-    },
-        [debouncedSearchQuery, selectLicenseType, pageNum]);
+    useEffect(getRepo, [debouncedSearchQuery, selectLicenseType]);
 
     const setNewParamForQuery = (typeParam, value) => {
 
@@ -46,12 +47,7 @@ function TableContainer() {
             default:
                 return;
         }
-
-        if (pageNum > 1) {
-            setPageNum(1);
-        }
     }
-
 
     return (
         <Table
@@ -60,7 +56,7 @@ function TableContainer() {
             tableData={dataFromGithub}
             searchQuery={searchQuery}
             selectLicenseType={selectLicenseType}
-            setPage={setPageNum}
+            setPage={getRepo}
             handlerSelectLicenseType={(type) => setNewParamForQuery(LICENSE_PARAM, type)}
             handlerSearchQueryInput={(query) => setNewParamForQuery(SEARCH_PARAM, query)}
         />
