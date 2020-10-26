@@ -1,5 +1,5 @@
-import React from 'react';
-import cn from './Pagination.module.sass'
+import React from "react";
+import cn from "./Pagination.module.sass"
 import {PAGE_SIZE} from "../../../constants/constants";
 import Select from "../Select/Select";
 

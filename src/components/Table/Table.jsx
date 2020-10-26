@@ -1,5 +1,5 @@
-import React from 'react';
-import cn from './Table.module.sass';
+import React from "react";
+import cn from "./Table.module.sass";
 import Input from "../common/Input/Input";
 import LicensesSelect from "../LicensesSelect/LicensesSelect";
 import Pagination from "../common/Pagination/Pagination";

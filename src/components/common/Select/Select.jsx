@@ -1,5 +1,5 @@
-import React from 'react';
-import cn from './Select.module.sass';
+import React from "react";
+import cn from "./Select.module.sass";
 
 const DEFAULT_VALUE = '';
 

@@ -1,4 +1,4 @@
-import axios from 'axios';
+import axios from "axios";
 import {getDateForQuery} from "../utils/date";
 import {PAGE_SIZE} from "../constants/constants";
 

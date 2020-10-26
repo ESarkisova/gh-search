@@ -1,4 +1,4 @@
-import React, {useContext, useEffect, useState} from 'react';
+import React, {useContext, useEffect, useState} from "react";
 import Select from "../common/Select/Select";
 import {AlertContext, ERROR_TYPE} from "../../contexts/alertContext";
 import {API} from "../../DAL/api";
@@ -26,7 +26,7 @@ function LicensesSelect({selectLicenseType, handlerChange}) {
         [])
 
     return (
-        <Select placeholder={"Все лицензии"}
+        <Select placeholder={'Все лицензии'}
                 value={selectLicenseType}
                 options={options}
                 handlerChange={handlerChange}

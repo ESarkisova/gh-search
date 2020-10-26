@@ -1,5 +1,5 @@
-import React from 'react';
-import cn from './Input.module.sass';
+import React from "react";
+import cn from "./Input.module.sass";
 
 function Input({value, placeholder = "", type = "text", onChange}) {
 
