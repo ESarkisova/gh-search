@@ -1,7 +1,6 @@
 import React, {memo} from "react";
 import {PAGE_SIZE} from "../../../constants/constants";
 import cn from "./Pagination.module.sass";
-import Input from "../Input/Input";
 
 function Pagination({ pageCurrent = 1,
                     setPage,
@@ -35,11 +34,8 @@ function Pagination({ pageCurrent = 1,
             <div>Количество страниц: <b>{totalPageCount}</b></div>
             <div className={cn.pagination}>
                 <span>Перейти на страницу:</span>
-
                 <button onClick={prevButtonClick} disabled={pageCurrent === 1}>prev</button>
-
                 <b>{pageCurrent}</b>
-
                 <button onClick={nextButtonClick} disabled={pageCurrent === totalPageCount}>next</button>
             </div>
         </div>
@@ -51,4 +47,4 @@ function arePropsEqual(prevProps, nextProps) {
         && prevProps.pageCurrent === nextProps.pageCurrent;
 }
 
-export default React.memo(Pagination, arePropsEqual);
+export default memo(Pagination, arePropsEqual);
