@@ -1,6 +1,6 @@
 import React, {useContext} from "react";
 import {AlertContext} from "../../contexts/alertContext";
-import cn from './ALert.module.sass';
+import cn from "./ALert.module.sass";
 
 function Alert() {
 

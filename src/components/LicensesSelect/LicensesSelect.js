@@ -1,4 +1,4 @@
-import React, {useContext, useEffect, useState} from 'react';
+import React, {useCallback, useContext, useEffect, useState} from "react";
 import Select from "../common/Select/Select";
 import {AlertContext, ERROR_TYPE} from "../../contexts/alertContext";
 import {API} from "../../DAL/api";
@@ -10,7 +10,7 @@ function LicensesSelect({selectLicenseType, handlerChange}) {
 
     const {showAlert} = useContext(AlertContext);
 
-    useEffect(async () => {
+    const getLicense = useCallback(async () => {
 
         setIsLoading(true);
         try {
@@ -21,9 +21,9 @@ function LicensesSelect({selectLicenseType, handlerChange}) {
         } finally {
             setIsLoading(false);
         }
+    }, [])
 
-    },
-        [])
+    useEffect(() => getLicense(),[])
 
     return (
         <Select placeholder={"Все лицензии"}
