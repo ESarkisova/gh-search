@@ -6,9 +6,14 @@ import Alert from "../Alert/Alert";
 function App() {
     return (
         <AlertContextProvider>
+<<<<<<< HEAD
             <div className='container'>
                 <TableContainer/>
+=======
+            <div className="container">
+>>>>>>> master
                 <Alert/>
+                <TableContainer/>
             </div>
         </AlertContextProvider>
     );

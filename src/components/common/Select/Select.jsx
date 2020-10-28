@@ -1,9 +1,9 @@
 import React from "react";
 import cn from "./Select.module.sass";
 
-const DEFAULT_VALUE = '';
+const DEFAULT_VALUE = "";
 
-function Select({ size = 'large',
+function Select({ size = "large",
                 value = DEFAULT_VALUE,
                 disabled,
                 placeholder,
